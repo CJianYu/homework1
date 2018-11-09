@@ -9,6 +9,15 @@
  */
 function dcate(A, B) {
 	/** Fill in here **/
+	let C = A
+	while(C) {
+		if(C.tail==null){
+			C.tail = B
+			break
+		}
+		C = C.tail
+	}
+	return A
 }
 
 /**
@@ -24,4 +33,15 @@ function dcate(A, B) {
  */
 function sub(L, start, len) {
 	/** Fill in here **/
+	let tempList = L
+	for(let i = 0;i<start+len-1;i++) {
+		if (start === i) {
+			L = tempList
+		}
+		tempList = tempList.tail
+	}
+	// 结束时将尾指针赋值为空
+	tempList.tail = null
+	return L
+
 }
